@@ -36,10 +36,15 @@ public:
 
 		for (int i = 0; i < num_threads; i++)
 		{
-			CloseHandle(marker_threads[i]);
-			CloseHandle(start_events[i]);
-			CloseHandle(terminate_events[i]);
+			if (i < marker_threads.size()) CloseHandle(marker_threads[i]);
+			if (i < start_events.size()) CloseHandle(start_events[i]);
+
+			if (terminate_events && i < num_threads && terminate_events[i] != nullptr) {
+				CloseHandle(terminate_events[i]);
+			}
 		}
+
+		delete[] terminate_events;
 	}
 
 	void createEvents()
@@ -112,6 +117,37 @@ public:
 
 			std::cout << "Array after termination:" << '\n';
 			arrCout();
+
+			LeaveCriticalSection(&cs);
+
+			startEventsSet();
+
+			if (num_stopped == num_threads)
+				break;
+		}
+	}
+
+	void mainCycle_test()
+	{
+		for (int i = 0; i < num_threads; i++) {
+			WaitForMultipleObjects(num_threads, terminate_events, TRUE, INFINITE);
+
+			EnterCriticalSection(&cs);
+
+			for (int i = 0; i < num_threads; i++)
+				if (terminated_threads[i])
+					ResetEvent(terminate_events[i]);
+
+			int marker_to_terminate = i;
+
+			if (terminated_threads[marker_to_terminate]) {
+				num_stopped++;
+				terminated_threads[marker_to_terminate] = false;
+				LeaveCriticalSection(&cs);
+				SetEvent(start_events[marker_to_terminate]);
+				WaitForSingleObject(marker_threads[marker_to_terminate], INFINITE);
+				EnterCriticalSection(&cs);
+			}
 
 			LeaveCriticalSection(&cs);
 

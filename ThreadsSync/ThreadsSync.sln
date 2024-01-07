@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThreadsSync", "ThreadsSync\ThreadsSync.vcxproj", "{ACC559C2-C376-4885-AC2A-881DC0E66053}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThreadsSync_test", "ThreadsSync_test\ThreadsSync_test.vcxproj", "{C1AA67FE-3CFA-46E7-8350-D2A349509912}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -27,6 +29,18 @@ Global
 		{ACC559C2-C376-4885-AC2A-881DC0E66053}.Release|x64.Build.0 = Release|x64
 		{ACC559C2-C376-4885-AC2A-881DC0E66053}.Release|x86.ActiveCfg = Release|Win32
 		{ACC559C2-C376-4885-AC2A-881DC0E66053}.Release|x86.Build.0 = Release|Win32
+		{C1AA67FE-3CFA-46E7-8350-D2A349509912}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{C1AA67FE-3CFA-46E7-8350-D2A349509912}.Debug|ARM64.Build.0 = Debug|ARM64
+		{C1AA67FE-3CFA-46E7-8350-D2A349509912}.Debug|x64.ActiveCfg = Debug|x64
+		{C1AA67FE-3CFA-46E7-8350-D2A349509912}.Debug|x64.Build.0 = Debug|x64
+		{C1AA67FE-3CFA-46E7-8350-D2A349509912}.Debug|x86.ActiveCfg = Debug|Win32
+		{C1AA67FE-3CFA-46E7-8350-D2A349509912}.Debug|x86.Build.0 = Debug|Win32
+		{C1AA67FE-3CFA-46E7-8350-D2A349509912}.Release|ARM64.ActiveCfg = Release|ARM64
+		{C1AA67FE-3CFA-46E7-8350-D2A349509912}.Release|ARM64.Build.0 = Release|ARM64
+		{C1AA67FE-3CFA-46E7-8350-D2A349509912}.Release|x64.ActiveCfg = Release|x64
+		{C1AA67FE-3CFA-46E7-8350-D2A349509912}.Release|x64.Build.0 = Release|x64
+		{C1AA67FE-3CFA-46E7-8350-D2A349509912}.Release|x86.ActiveCfg = Release|Win32
+		{C1AA67FE-3CFA-46E7-8350-D2A349509912}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

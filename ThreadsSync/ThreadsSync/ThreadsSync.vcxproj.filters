@@ -23,8 +23,5 @@
     <ClInclude Include="MainProcess.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MarkerThread.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
